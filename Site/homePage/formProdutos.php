@@ -11,12 +11,6 @@
     <h2>Cadastrar Produtos</h2>
   <div class="form-group">
   <div class="col-md-4 mb-3">
-    <label for="exampleInputEmail1">idproduto</label>
-    <input type="number" class="form-control" id="id" aria-describedby="idlHelp" placeholder="Digite o id do produto">
-  </div>
-  </div>
-  <div class="form-group">
-  <div class="col-md-4 mb-3">
     <label for="exampleInputPassword1">Nome</label>
     <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto">
   </div>
@@ -31,12 +25,6 @@
   <div class="col-md-4 mb-3">
     <label for="exampleInputPassword1">Quantidade</label>
     <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade de produtos">
-  </div>
-  </div>
-  <div class="form-group">
-  <div class="col-md-4 mb-3">
-    <label for="exampleInputPassword1">Categoria</label>
-    <input type="text" class="form-control" id="categoria" placeholder="Digite a categoria do produto">
   </div>
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
