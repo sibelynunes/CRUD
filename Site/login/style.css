@@ -50,14 +50,14 @@ body{
     text-align: center;
 }
 .title{
-    font-family: 'Montserrat';
+    font-family: 'serif';
     font-weight: bolder;
     color: #248ca5;
     font-size: 30px;
     margin-bottom: 5px;
 }
 .subtitle{
-    font-family: 'Montserrat';
+    font-family: 'serif';
     color: #248ca5;
     font-weight: 600;
     font-size: 15px;
@@ -81,7 +81,7 @@ body{
     box-shadow: 0px 10px 40px #00000056;
 }
 .box-form h1{
-    font-family: 'Montserrat';
+    font-family: 'serif';
     font-weight: 600;
     color: #248ca5;
     font-size: 30px;
@@ -94,7 +94,7 @@ body{
 }
 
 .box-form label{
-    font-family: 'Montserrat';
+    font-family: 'serif';
     font-weight: 500;
     color: #248ca5;
     font-size: 18px;
@@ -128,7 +128,7 @@ body{
     border: none;
     color: white;
     font-weight: 500;
-    font-family: 'Montserrat';
+    font-family: 'serif';
     font-size: 15px;
 }
 .text-register{
@@ -137,7 +137,7 @@ body{
     text-align: center;
 }
 .text-register p{
-    font-family: 'Montserrat';
+    font-family: 'serif';
     font-size: 12px;
     font-weight: 600;
 }

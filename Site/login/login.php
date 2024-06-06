@@ -23,7 +23,7 @@
             $stmt->execute([$email, $senha]);
 
             if ($stmt->rowCount() > 0) {
-                mostrarAlerts('Sucesso!', 'Login realizado com sucesso.', 'success', '../homePage/home.php');
+                mostrarAlerts('Sucesso!', 'Login realizado com sucesso.', 'success', '../homePage/index.php');
             } else {
                 mostrarAlerts('Erro!', 'Dados inválidos.', 'error', 'login.php');
             }

@@ -25,7 +25,7 @@
             if($stmt->rowCount() > 0){
                 mostrarAlerts('Sucesso!', 'Usuário criado com sucesso.', 'success', '../login/login.php');
             }else{
-                mostrarAlerts('Erro!', 'Dados inválidos.', 'error', 'index.php');
+                mostrarAlerts('Erro!', 'Email ou senha incorretos.', 'error', 'index.php');
             }
 
         }else{
