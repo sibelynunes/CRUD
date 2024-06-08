@@ -19,7 +19,7 @@
             $email = $_POST["email"];
             $senha = $_POST["senha"];
 
-            $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+            $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
             $stmt->execute([$email, $senha]);
 
             if ($stmt->rowCount() > 0) {

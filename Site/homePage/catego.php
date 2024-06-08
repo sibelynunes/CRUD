@@ -1,10 +1,10 @@
 <?php
 session_start();
 require('../connect.php');
-$sql = "SELECT * FROM produto";
+$sql = "SELECT * FROM categoria";
 $result = $pdo -> query($sql);
 $result ->execute();
-$produtos = $result->fetchAll (PDO::FETCH_ASSOC);
+$categorias = $result->fetchAll (PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -15,54 +15,42 @@ $produtos = $result->fetchAll (PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <div class ="container">
   <div class="row">
   <div class="col-md-6" >
     <?php
     if(isset($_GET['sucesso'])){
-      $nomeProduto = $_GET ['nome_produto'];
+      $nomeCategoria = $_GET ['nome_categoria'];
     ?>
     <div class="container mt-5">
     <div class="alert alert-success">
-      produto '<?php echo $nomeProduto;?>' cadastro com sucesso!
+      categoria '<?php echo $nomeCategoria;?>' cadastro com sucesso!
     </div>
     <?php
      }
     ?>
     </div>
-    <a class="bnt bnt-primary" href="formProdutos.php">cadastro do produto</a>
+    
+    <a class="bnt bnt-primary" href="formProdutos.php">cadastrar categoria</a>
     <?php
-       if(count($produtos) > 0){
+       if(count($categorias) > 0){
        ?>
   </div>
   </div>
-  <h2>lista de produtos</h2>
+  <h2>lista de Categorias</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">idproduto</th>
+      <th scope="col">idcategoria</th>
       <th scope="col">Nome</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">categoria_idcategoria</th>
     </tr>
   </thead>
     <tbody>
     <?php
-    foreach($produtos as $produto){
+    foreach($categorias as $categoria){
        echo "<tr>";
-       echo "<td>". $produto['idproduto']."</td>";
-       echo "<td>". $produto['nome']."</td>";
-       echo "<td>". $produto['valor']."</td>";
-       echo "<td>". $produto['quantidade']."</td>";
-       echo "<td>". $produto['categoria_idcategoria']."</td>";
-       echo "<td>
-       <form method='post' action='../verificar/delete.php'
-       <input type='hidden' name= 'idproduto' value= '" . $produto['idproduto'] ."'>
-       <input type='hidden' name= 'nome' value= '" . $produto['nome'] ."'>
-       <button class= 'bnt bnt-danger' type= 'submit'>delete</button></form>
-       </td>";
+       echo "<td>". $categoria['idproduto']."</td>";
+       echo "<td>". $categoria['nome']."</td>";
        echo "</tr>";
     }
     ?>
@@ -72,7 +60,7 @@ $produtos = $result->fetchAll (PDO::FETCH_ASSOC);
 </table>
 <?php
   }else{
-        echo"<h1>Você não tem nenhum produto cadastrado.";
+        echo"<h1>Você não tem nenhuma categoria cadastrada.";
        }
 ?>
 

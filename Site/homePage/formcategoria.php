@@ -8,24 +8,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <body>
-<form method="post" action="../verificar/cadastraprod.php">
-    <h2>Cadastrar Produtos</h2>
+<form method="post" action="../verificarum/cadastrarcategoria.php">
+    <h2>Cadastrar categoria</h2>
   <div class="form-group">
   <div class="col-md-4 mb-3">
     <label for="exampleInputPassword1">Nome</label>
     <input type="text" class="form-control" name="nome" placeholder="Digite o nome do produto">
   </div>
-  </div>
-  <div class="form-group">
-  <div class="col-md-4 mb-3">
-    <label for="exampleInputPassword1">Valor</label>
-    <input type="number" class="form-control" name="valor" placeholder="Digite o valor do produto">
-  </div>
-  </div>
-  <div class="form-group">
-  <div class="col-md-4 mb-3">
-    <label for="exampleInputPassword1">Quantidade</label>
-    <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos">
   </div>
   </div>
   <button name="submit" class="btn btn-primary">Enviar</button>
