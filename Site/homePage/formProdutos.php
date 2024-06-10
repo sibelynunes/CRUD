@@ -27,6 +27,21 @@
     <label for="exampleInputPassword1">Quantidade</label>
     <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos">
   </div>
+  <select name="categoria" id="c">
+  <?php
+  $sql = "SELECT * FROM categoria";
+  $resultado = $pdo->prepare($sql);
+  $resultado->execute();
+  $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
+  foreach($categorias as $categoria){
+    echo "<option value ='". $categoria ['idcategoria']. "'>" . $categoria['nome']. "</option>";
+
+};
+
+
+  
+  ?>
+  </select>
   </div>
   <button name="submit" class="btn btn-primary">Enviar</button>
 </form>
