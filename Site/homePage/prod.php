@@ -31,7 +31,7 @@ $produtos = $result->fetchAll (PDO::FETCH_ASSOC);
      }
     ?>
     </div>
-    <a class="bnt bnt-primary" href="formProdutos.php">cadastro do produto</a>
+    <a button type="button" href="formProdutos.php" class="btn btn-primary">cadastro do produto</button></a>
     <?php
        if(count($produtos) > 0){
        ?>

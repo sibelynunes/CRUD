@@ -6,6 +6,7 @@
     <title>navbar</title>
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href=".css">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand">Wilma Decorações</a>
@@ -23,13 +24,10 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          produtos
-        </a>
+          produtos</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Todos os produtos</a>
-          <a class="dropdown-item" href="#">Bandejas</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Mesas</a>
+          <a class="dropdown-item" href="#">kits prontos</a>
         </div>
       </li>
       <li class="nav-item">
@@ -37,6 +35,8 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contatos</a>
+        <a href="contatos.php">contatos</a>
+
       </li>
     </ul>
   </div>
