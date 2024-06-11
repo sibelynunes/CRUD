@@ -26,24 +26,29 @@
   <div class="col-md-4 mb-3">
     <label for="exampleInputPassword1">Quantidade</label>
     <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos">
-  </div>
   <select name="categoria" id="c">
   <?php
+  require '../connect.php';
   $sql = "SELECT * FROM categoria";
   $resultado = $pdo->prepare($sql);
   $resultado->execute();
   $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
+  
   foreach($categorias as $categoria){
-    echo "<option value ='". $categoria ['idcategoria']. "'>" . $categoria['nome']. "</option>";
-
-};
-
-
+  
+  
+    echo "<option value ='" . $categoria['idcategoria'] . "'>" . $categoria['nome']. "</option>";
+  
+  }
+  
   
   ?>
   </select>
   </div>
-  <button name="submit" class="btn btn-primary">Enviar</button>
+  <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+ 
+
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
