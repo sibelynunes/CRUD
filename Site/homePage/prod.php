@@ -57,14 +57,14 @@ $produtos = $result->fetchAll (PDO::FETCH_ASSOC);
        echo "<td>". $produto['valor']."</td>";
        echo "<td>". $produto['quantidade']."</td>";
        echo "<td>". $produto['categoria_idcategoria']."</td>";
-       echo "<td>
-       <form method='post' action='../verificar/delete.php'>
+       echo "<td>";
+       echo "<form method='post' action='../verificar/delete.php'>
        <input type='hidden' name= 'idproduto' value= '" . $produto['idproduto'] ."'>
        <input type='hidden' name= 'nome' value= '" . $produto['nome'] ."'>
-       <button class= 'bnt bnt-danger' type= 'submit'>delete</button>
+       <button class='btn btn-danger' type='submit'>Deletar</button>
+       <a class='btn btn-primary' href='editProdutoForm.php?id=$produto[idproduto]'>Editar</a>
        </form>
-       </td>";
-       echo "</tr>";
+       </td></tr>";
     }
     ?>
     </div>

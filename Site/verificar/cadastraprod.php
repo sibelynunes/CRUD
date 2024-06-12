@@ -15,7 +15,7 @@ isset($_POST['categoria']) && !empty($_POST['categoria'])
     echo $nome;
     echo $categoria;
     $sql = "INSERT INTO produto(nome,valor,quantidade, categoria_idcategoria) VALUES(:nome, :valor, :quantidade, :categoria_idcategoria)";
-    $result = $pdo ->prepare($sql);
+    $result = $pdo->prepare($sql);
     $result -> bindValue(":nome", $nome);
     $result -> bindValue(":valor", $valor);
     $result -> bindValue(":quantidade", $quantidade);
