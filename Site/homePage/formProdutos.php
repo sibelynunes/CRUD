@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
         .custom-card {
-          /* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
             margin: 0 auto;
             margin-top: 50px; 
             width: 400px; 
@@ -34,16 +33,18 @@ border: 1px solid rgba(255, 255, 255, 0.3);
             <form method="post" action="../verificar/cadastraprod.php">
                 <h2 class="text-center">Cadastrar Produtos</h2>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Nome</label>
+                    <label for="nome">Nome</label>
                     <input type="text" class="form-control" name="nome" placeholder="Digite o nome do produto">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Valor</label>
+                    <label for="valor">Valor</label>
                     <input type="number" class="form-control" name="valor" placeholder="Digite o valor do produto">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Quantidade</label>
+                    <label for="quantidade">Quantidade</label>
                     <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos">
+                    
+                    <label for="c">categoria</label>
                     <select name="categoria" id="c" class="form-control mt-3">
                         <?php
                         require '../connect.php';
