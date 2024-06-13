@@ -7,7 +7,6 @@ isset($_POST['quantidade']) && !empty($_POST['quantidade'])&&
 isset($_POST['categoria']) && !empty($_POST['categoria'])
 
     ){
-        var_dump("oi");
     $categoria = $_POST['categoria'];
     $nome = $_POST['nome'];
     $valor = $_POST['valor'];

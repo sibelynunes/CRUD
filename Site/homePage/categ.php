@@ -15,6 +15,7 @@ $categorias = $result->fetchAll (PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <div class ="container">
   <div class="row">
   <div class="col-md-6" >
@@ -30,14 +31,13 @@ $categorias = $result->fetchAll (PDO::FETCH_ASSOC);
      }
     ?>
     </div>
-    
-    <a class="bnt bnt-primary" href="formcategoria.php">cadastrar categoria</a>
+    <a button type="button" href="formcategoria.php" class="btn btn-primary">cadastro da categoria</button></a>
     <?php
-       if(count($categorias) > 0){
+       if(count($categoria) > 0){
        ?>
   </div>
   </div>
-  <h2>lista de Categorias</h2>
+  <h2>lista de categorias</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -51,7 +51,14 @@ $categorias = $result->fetchAll (PDO::FETCH_ASSOC);
        echo "<tr>";
        echo "<td>". $categoria['idcategoria']."</td>";
        echo "<td>". $categoria['nome']."</td>";
-       echo "</tr>";
+       echo "<td>";
+       echo "<form method='post' action='../verificar/deleteCatego.php'>
+       <input type='hidden' name= 'idcategoria' value= '" . $produto['idcategoria'] ."'>
+       <input type='hidden' name= 'nome' value= '" . $categoria['nome'] ."'>
+       <button class='btn btn-danger' type='submit'>Deletar</button>
+       <a class='btn btn-primary' href='editCategoriaForm.php?id=$categoria[idcategoria]'>Editar</a>
+       </form>
+       </td></tr>";
     }
     ?>
     </div>
