@@ -15,6 +15,7 @@ $categorias = $result->fetchAll (PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <div class ="container">
   <div class="row">
   <div class="col-md-6" >
@@ -45,18 +46,24 @@ $categorias = $result->fetchAll (PDO::FETCH_ASSOC);
       <th scope="col">Nome</th>
     </tr>
   </thead>
-    <tbody>
+    <tbody> 
     <?php
     foreach($categorias as $categoria){
-       echo "<tr>";
-       echo "<td>". $categoria['idcategoria']."</td>";
-       echo "<td>". $categoria['nome']."</td>";
-       echo "</tr>";
-    }
-    ?>
+    echo "<tr>";
+    echo "<td>". $categoria['idcategoria']."</td>";
+    echo "<td>". $categoria['nome']."</td>";
+    echo "<td>";
+    echo "<form method='post' action='../verificar/deleteCatego.php'>
+    <input type='hidden' name= 'idcategoria' value= '" . $categoria['idcategoria'] ."'>
+    <input type='hidden' name= 'nome' value= '" . $categoria['nome'] ."'>
+    <button class='btn btn-danger' type='submit'>Deletar</button>
+    <a class='btn btn-primary' href='editCategoriaForm.php?id=$categoria[idcategoria]'>Editar</a>
+    </form>
+    </td></tr>";
+ }
+  ?>
     </div>
     </tbody>
-  
 </table>
 <?php
   }else{

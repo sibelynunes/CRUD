@@ -14,8 +14,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+    <li class="nav-item">
+        <a class="nav-link white-link" href="index.php">inicio</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
         <div class="col-md-6">
             <div class="card bg-success text-white">
                 <div class="card-body">
-                    <a href="#" class="white-link text-white">
+                    <a href="prod.php" class="white-link text-white">
                         <h5 class="card-title">Produtos</h5>
                     </a>
                     <p class="card-text ">Quantidade: </p>
@@ -60,7 +60,7 @@
         <div class="col-md-6">
             <div class="card bg-primary text-white">
                 <div class="card-body">
-                    <a href="#" class="white-link text-white">
+                    <a href="catego.php" class="white-link text-white">
                         <h5 class="card-title ">Categorias</h5>
                     </a>
                     <p class="card-text">Quantidade: </p>
