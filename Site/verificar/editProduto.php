@@ -22,7 +22,7 @@ if(isset($_POST['update'])){
         $result->bindValue(':categoria_id', $categoria_id);
         $result->bindValue(':id', $id);
         $result->execute();
-        header('Location: ../homePage/prod.php');
+    header('Location: ../homePage/prod.php?nome_prod=$nome&editar=ok');
         exit();
     } else {
         echo "A categoria selecionada não existe";

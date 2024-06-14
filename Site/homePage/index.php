@@ -29,14 +29,6 @@
         <a class="nav-link white-link" href="catego.php">Categorias</a>
       </li>
     </ul>
-  </div>
-</nav>
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <a class="btn btn-primary" href="formcategoria.php">Cadastrar categoria</a>
-        </div>
         <div class="col-md-6 text-right">
             <div class="button-container">
                 <a class="btn btn-danger" href="../login/login.php">Sair</a>
@@ -44,6 +36,10 @@
         </div>
     </div>
 </div>
+  </div>
+</nav>
+
+
 
 <div class="container mt-5">
     <div class="row">

@@ -1,7 +1,5 @@
 <?php
 require '../connect.php';
-// var_dump($_POST['idproduto']);
-// var_dump($_POST['nome']);
 var_dump($_POST);
 if(isset($_POST['idproduto'])){
     $nome = $_POST['nome'];
