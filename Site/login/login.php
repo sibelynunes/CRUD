@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require '../connect.php';
     function mostrarAlerts($title, $message, $icon, $redirect) {
         echo "<script>
@@ -18,6 +19,7 @@
         if (isset($_POST["email"]) && isset($_POST["senha"])) {
             $email = $_POST["email"];
             $senha = $_POST["senha"];
+            $_SESSION["email"] = $_POST["email"];
 
             $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
             $stmt->execute([$email, $senha]);

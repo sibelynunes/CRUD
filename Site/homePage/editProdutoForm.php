@@ -4,7 +4,7 @@ if (!empty($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT produto.*, categoria.nome AS nome_categoria 
             FROM produto 
-            INNER JOIN categoria ON produto.categoria_idcategoria = categoria.idcategoria 
+            JOIN categoria ON produto.categoria_idcategoria = categoria.idcategoria 
             WHERE produto.idproduto = :id";
     $result = $pdo->prepare($sql);
     $result->bindValue(':id', $id);
@@ -53,43 +53,58 @@ if (!empty($_GET['id'])) {
 <body>
 <div class="card custom-card">
     <div class="card-body">
-        <form method="post" action="../verificar/editProduto.php">
-            <h2 class="text-center">Editar Dados do Produto</h2>
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="Digite o nome do produto" value="<?php echo $nome;?>">
-            </div>
-            <div class="form-group">
-                <label for="valor">Valor</label>
-                <input type="number" class="form-control" name="valor" placeholder="Digite o valor do produto" value="<?php echo $valor; ?>">
-            </div>
-            <div class="form-group">
-                <label for="quantidade">Quantidade</label>
-                <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos" value="<?php echo $quantidade; ?>">
-            </div>
-            <div class="form-group">
-                <label for="c">Categoria</label>
-                <select name="categoria" id="c" class="form-control mt-3">
-                    <?php
-                    require '../connect.php';
-                    $sql = "SELECT * FROM categoria";
-                    $resultado = $pdo->prepare($sql);
-                    $resultado->execute();
-                    $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
-                    
-                    foreach($categorias as $categoria){
-                        $selected = ($categoria['idcategoria'] == $categoria_id) ? 'selected' : '';
-                        echo "<option value='" . $categoria['idcategoria'] . "' $selected>" . $categoria['nome']. "</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-            <input type="hidden" name="id" value="<?php echo $id;?>">
-            <button name="update" type="submit" class="btn btn-primary btn-block">Atualizar</button>
-        </form>
+    <form method="post" action="../verificar/editProduto.php" class="needs-validation" novalidate>
+    <h2 class="text-center">Editar Dados do Produto</h2>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do produto" value="<?php echo htmlspecialchars($nome); ?>" required>
+        <div class="invalid-feedback">
+            Por favor, insira um nome válido.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="number" class="form-control" name="valor" id="valor" placeholder="Digite o valor do produto" value="<?php echo $valor; ?>" required>
+        <div class="invalid-feedback">
+            Por favor, insira um valor válido.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Digite a quantidade de produtos" value="<?php echo $quantidade; ?>" required>
+        <div class="invalid-feedback">
+            Por favor, insira uma quantidade válida.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <select name="categoria" id="categoria" class="form-control mt-3" required>
+            <option value="">Escolha uma categoria...</option>
+            <?php
+            require '../connect.php';
+            $sql = "SELECT * FROM categoria";
+            $resultado = $pdo->prepare($sql);
+            $resultado->execute();
+            $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach($categorias as $categoria){
+                $selected = ($categoria['idcategoria'] == $categoria_id) ? 'selected' : '';
+                echo "<option value='" . $categoria['idcategoria'] . "' $selected>" . $categoria['nome']. "</option>";
+            }
+            ?>
+        </select>
+        <div class="invalid-feedback">
+            Por favor, selecione uma categoria.
+        </div>
+    </div>
+    <input type="hidden" name="id" value="<?php echo $id;?>">
+    <button name="update" type="submit" class="btn btn-primary btn-block">Atualizar</button>
+    <a href="catego.php" class="btn btn-secondary btn-block">Cancelar</a>
+</form>
+
     </div>
 </div>
-
+<script src="../js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

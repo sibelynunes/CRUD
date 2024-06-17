@@ -30,40 +30,58 @@
 <body>
     <div class="card custom-card">
         <div class="card-body">
-            <form method="post" action="../verificar/cadastraprod.php">
-                <h2 class="text-center">Cadastrar Produtos</h2>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" placeholder="Digite o nome do produto">
-                </div>
-                <div class="form-group">
-                    <label for="valor">Valor</label>
-                    <input type="number" class="form-control" name="valor" placeholder="Digite o valor do produto">
-                </div>
-                <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input type="number" class="form-control" name="quantidade" placeholder="Digite a quantidade de produtos">
-                    
-                    <label for="c">categoria</label>
-                    <select name="categoria" id="c" class="form-control mt-3">
-                        <?php
-                        require '../connect.php';
-                        $sql = "SELECT * FROM categoria";
-                        $resultado = $pdo->prepare($sql);
-                        $resultado->execute();
-                        $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
-                        
-                        foreach($categorias as $categoria){
-                            echo "<option value='" . $categoria['idcategoria'] . "'>" . $categoria['nome']. "</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <button name="submit" type="submit" class="btn btn-primary btn-block">Enviar</button>
-            </form>
+        <form method="post" action="../verificar/cadastraprod.php" class="needs-validation" novalidate>
+    <h2 class="text-center">Cadastrar Produtos</h2>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do produto" required>
+        <div class="invalid-feedback">
+            Por favor, insira um nome válido.
         </div>
     </div>
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="number" class="form-control" name="valor" id="valor" placeholder="Digite o valor do produto" required>
+        <div class="invalid-feedback">
+            Por favor, insira um valor válido.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Digite a quantidade de produtos" required>
+        <div class="invalid-feedback">
+            Por favor, insira uma quantidade válida.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <select name="categoria" id="categoria" class="form-control mt-3" required>
+            <option value="">Escolha uma categoria...</option>
+            <?php
+            require '../connect.php';
+            $sql = "SELECT * FROM categoria";
+            $resultado = $pdo->prepare($sql);
+            $resultado->execute();
+            $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
+            foreach($categorias as $categoria){
+                echo "<option value='" . $categoria['idcategoria'] . "'>" . $categoria['nome']. "</option>";
+            }
+            ?>
+        </select>
+        <div class="invalid-feedback">
+            Por favor, selecione uma categoria.
+        </div>
+    </div>
+    <button name="submit" type="submit" class="btn btn-primary btn-block">Enviar</button>
+    <a href="homePage/prod.php" class="btn btn-secondary btn-block">Cancelar</a>
+</form>
+
+
+
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

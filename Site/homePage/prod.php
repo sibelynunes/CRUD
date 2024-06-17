@@ -1,7 +1,9 @@
 <?php
     session_start();
     require('../connect.php');
-    $sql = "SELECT * FROM produto";
+    $sql = "SELECT produto.*, categoria.nome AS nome_categoria 
+    FROM produto 
+    JOIN categoria ON produto.categoria_idcategoria = categoria.idcategoria";
     $result = $pdo->query($sql);
     $result->execute();
     $produtos = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -26,6 +28,37 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="../img/wilma.png" width="30" height="30" class="d-inline-block align-top" alt=""> Wilma Decorações
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link white-link" href="index.php">inicio</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Produtos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item white-link" href="prod.php">Todos os produtos</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link white-link" href="catego.php">Categorias</a>
+      </li>
+    </ul>
+        <div class="col-md-6 text-right">
+            <div class="button-container">
+                <a class="btn btn-danger" href="../login/login.php">Sair</a>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
+</nav>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -50,17 +83,21 @@
         }
         ?>
 
-                <a href="formProdutos.php" class="btn btn-primary">Cadastro do Produto</a>
+                
                 <?php
                 if(count($produtos) > 0){
             ?>
             </div>
         </div>
+        <div class="d-flex flex-row mt-5 justify-content-between">
         <h2 class="text-center">Lista de Produtos</h2>
+        <a href="formProdutos.php" class="btn btn-primary">Cadastro do Produto</a>
+        </div>
+      
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <table class="table">
-                    <thead id="topo">
+                    <thead id="">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
@@ -78,7 +115,7 @@
                         echo "<td>". $produto['nome']."</td>";
                         echo "<td>". $produto['valor']."</td>";
                         echo "<td>". $produto['quantidade']."</td>";
-                        echo "<td>". $produto['nome']. "</td>";
+                        echo "<td>". $produto['nome_categoria']. "</td>";
                         echo "<td>";
                         echo "<form method='post' action='../verificar/delete.php'>";
                         echo "<input type='hidden' name= 'idproduto' value= '" . $produto['idproduto'] ."'>";
@@ -110,5 +147,4 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 </body>
-
 </html>

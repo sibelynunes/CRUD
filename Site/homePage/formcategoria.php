@@ -32,18 +32,25 @@
     <div class="container">
         <div class="card custom-card">
             <div class="card-body">
-                <form method="post" action="../verificarum/cadastrarcategoria.php">
-                    <h2 class="text-center mb-4">Cadastrar Categoria</h2>
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da categoria">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-                </form>
+            <form method="post" action="../verificarum/cadastrarcategoria.php" class="needs-validation" novalidate>
+    <h2 class="text-center mb-4">Cadastrar Categoria</h2>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da categoria" required>
+        <div class="invalid-feedback">
+            Por favor, insira um nome válido.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+    <a href="homePage/catego.php" class="btn btn-secondary btn-block">Cancelar</a>
+</form>
+
+
+
             </div>
         </div>
     </div>
-
+    <script src="../js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>

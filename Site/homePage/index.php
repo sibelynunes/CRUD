@@ -6,6 +6,12 @@
     <title>Navbar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+<?php
+    session_start();
+    if(!isset($_SESSION["email"])){
+      header('location: ../login/login.php');
+    }
+?>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="../img/wilma.png" width="30" height="30" class="d-inline-block align-top" alt=""> Wilma Decorações
@@ -31,7 +37,7 @@
     </ul>
         <div class="col-md-6 text-right">
             <div class="button-container">
-                <a class="btn btn-danger" href="../login/login.php">Sair</a>
+                <a class="btn btn-danger" href="Logout/logout.php">Sair</a>
             </div>
         </div>
     </div>
