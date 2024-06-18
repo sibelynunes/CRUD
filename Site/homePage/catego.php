@@ -83,6 +83,7 @@
                                     <input type="hidden" name="idcategoria" value="<?php echo $categoria['idcategoria']; ?>">
                                     <input type="hidden" name="nome" value="<?php echo $categoria['nome']; ?>">
                                     <button class="btn btn-danger" type="submit">Deletar</button>
+                                    
                                     <a class="btn btn-primary" href="editCategoriaForm.php?id=<?php echo $categoria['idcategoria']; ?>">Editar</a>
                                 </form>
                             </td>

@@ -74,7 +74,7 @@
         </div>
     </div>
     <button name="submit" type="submit" class="btn btn-primary btn-block">Enviar</button>
-    <a href="homePage/prod.php" class="btn btn-secondary btn-block">Cancelar</a>
+    <a href="prod.php" class="btn btn-secondary btn-block">Cancelar</a>
 </form>
 
 

@@ -59,6 +59,11 @@
 </div>
   </div>
 </nav>
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-primary mb-3" href="formProdutos.php">Cadastrar produto</a>
+            </div>
+        </div>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -82,8 +87,6 @@
                 <?php
         }
         ?>
-
-                
                 <?php
                 if(count($produtos) > 0){
             ?>
@@ -108,6 +111,10 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                    
+
+
                         <?php
                     foreach($produtos as $produto){
                         echo "<tr>";

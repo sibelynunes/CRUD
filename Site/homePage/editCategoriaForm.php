@@ -68,6 +68,8 @@ if (isset($_GET['id'])) {
     </div>
     <input type="hidden" name="idcategoria" value="<?php echo $idcategoria; ?>">
     <button name="update" type="submit" class="btn btn-primary btn-block">Atualizar</button>
+    <a href="catego.php" class="btn btn-secondary btn-block">Cancelar</a>
+
 </form>
         </div>
     </div>

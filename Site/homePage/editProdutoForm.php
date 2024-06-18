@@ -99,7 +99,7 @@ if (!empty($_GET['id'])) {
     </div>
     <input type="hidden" name="id" value="<?php echo $id;?>">
     <button name="update" type="submit" class="btn btn-primary btn-block">Atualizar</button>
-    <a href="catego.php" class="btn btn-secondary btn-block">Cancelar</a>
+    <a href="prod.php" class="btn btn-secondary btn-block">Cancelar</a>
 </form>
 
     </div>

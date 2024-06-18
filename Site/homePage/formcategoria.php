@@ -42,7 +42,7 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-    <a href="homePage/catego.php" class="btn btn-secondary btn-block">Cancelar</a>
+    <a href="catego.php" class="btn btn-secondary btn-block">Cancelar</a>
 </form>
 
 
