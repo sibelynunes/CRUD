@@ -94,7 +94,7 @@
         </div>
         <div class="d-flex flex-row mt-5 justify-content-between">
         <h2 class="text-center">Lista de Produtos</h2>
-        <a href="formProdutos.php" class="btn btn-primary">Cadastro do Produto</a>
+
         </div>
       
         <div class="row justify-content-center">
